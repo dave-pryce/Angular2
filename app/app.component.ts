@@ -6,10 +6,6 @@ import { HTTP_PROVIDERS } from '@angular/http';
 @Component({
   selector: 'racing-app',
   template: `
-<header class="container">
-  <h1>{{heading}}</h1>
-</header>
-<my-races></my-races>
 `,
   directives: [RacesComponent],
   providers:[RaceService, HTTP_PROVIDERS]
