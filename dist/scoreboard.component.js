@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AboutComponent = (function () {
-    function AboutComponent() {
+var ScoreboardComponent = (function () {
+    function ScoreboardComponent() {
     }
-    AboutComponent = __decorate([
+    ScoreboardComponent = __decorate([
         core_1.Component({
-            selector: 'about',
-            template: "\n<h1>About</h1>\n<p>Race info</p>\n"
+            selector: 'scoreboard',
+            template: "\n<h1>ScoreBoard</h1>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], AboutComponent);
-    return AboutComponent;
+    ], ScoreboardComponent);
+    return ScoreboardComponent;
 }());
-exports.AboutComponent = AboutComponent;
-//# sourceMappingURL=about.component.js.map
+exports.ScoreboardComponent = ScoreboardComponent;
+//# sourceMappingURL=scoreboard.component.js.map
