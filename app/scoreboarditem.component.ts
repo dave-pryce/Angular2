@@ -1,9 +1,10 @@
 import { Component } from '@angular/core'
 import { Race } from './race';
-import { RaceService } from './race.service';
+import { RaceScore } from './raceScore'
+import { RaceScoreService } from './raceScore.service';
 
 @Component({
-  selector: 'scoreboard',
+  selector: 'scoreboard-item',
   template: `
 <header class="container">
 <h1>ScoreBoard</h1>
@@ -24,15 +25,14 @@ import { RaceService } from './race.service';
 `
 })
 
-export class ScoreboardComponent {
+export class scoreboardItemComponent {
 
-  races: Race[];
+  race: Race;
 
-  constructor(private raceService: RaceService) { }
+  constructor(private raceScoreService: RaceScoreService) { }
 
-  ngOnInit() {
-    this.raceService.getRaces()
-        .subscribe(data => this.races = data);
-  }
-
+//  ngOnInit() {
+//    this.raceService.getRaces()
+//        .subscribe(data => this.races = data);
+//  }
 }
