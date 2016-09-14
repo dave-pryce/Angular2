@@ -23,7 +23,7 @@ import { ScoreboardItemComponent} from './scoreboardItem.component';
 </div>
 </div>
 `,
-  directive: [ScoreboardItemComponent],
+  directives: [ScoreboardItemComponent],
   providers: [RaceService]
 })
 

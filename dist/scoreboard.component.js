@@ -24,7 +24,7 @@ var ScoreboardComponent = (function () {
         core_1.Component({
             selector: 'scoreboard',
             template: "\n<header class=\"container\">\n<h1>ScoreBoard</h1>\n<h3>Race Notifications</h3>\n<ul>\n<li></li>\n</ul>\n</header>\n\n\n<div class=\"container-fluid scoreboard-display\">\n  <div class=\"row\">\n    <div class=\"col-xs-4\" *ngFor=\"let race of races\">\n    <scoreboard-item [race]=\"race\"></scoreboard-item>\n    </div>\n</div>\n</div>\n",
-            directive: [scoreboardItem_component_1.ScoreboardItemComponent],
+            directives: [scoreboardItem_component_1.ScoreboardItemComponent],
             providers: [race_service_1.RaceService]
         }), 
         __metadata('design:paramtypes', [race_service_1.RaceService])
