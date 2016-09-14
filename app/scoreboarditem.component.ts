@@ -6,28 +6,21 @@ import { RaceScoreService } from './raceScore.service';
 @Component({
   selector: 'scoreboard-item',
   template: `
-<header class="container">
-<h1>ScoreBoard</h1>
-<h3>Race Notifications</h3>
-<ul>
-<li></li>
-</ul>
-</header>
-
-
-<div class="container-fluid scoreboard-display">
-  <div class="row">
-    <div class="col-xs-4" *ngFor="let race of races">
-    <scoreboard-item [race="race"]></scoreboard-item>
-    </div>
-</div>
-</div>
-`
+  <div class="scoreboard-item">
+  <h2>{{race.name}}</h2>
+  <p></p>
+  <ol>
+    <li>
+    </li>
+  </ol>
+  </div>
+`,
+  providers: [RaceScoreService]
 })
 
 export class scoreboardItemComponent {
 
-  race: Race;
+  @Input() race: Race;
 
   constructor(private raceScoreService: RaceScoreService) { }
 

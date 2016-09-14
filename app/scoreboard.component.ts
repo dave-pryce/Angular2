@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { Race } from './race';
 import { RaceService } from './race.service';
+import { ScoreboardItemComponent} from './scoreboardItem.component';
 
 @Component({
   selector: 'scoreboard',
@@ -17,11 +18,13 @@ import { RaceService } from './race.service';
 <div class="container-fluid scoreboard-display">
   <div class="row">
     <div class="col-xs-4" *ngFor="let race of races">
-    <scoreboard-item [race="race"]></scoreboard-item>
+    <scoreboard-item [race]="race"></scoreboard-item>
     </div>
 </div>
 </div>
-`
+`,
+  directive: [ScoreboardItemComponent],
+  providers: [RaceService]
 })
 
 export class ScoreboardComponent {
