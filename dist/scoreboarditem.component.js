@@ -19,14 +19,17 @@ var ScoreboardItemComponent = (function () {
     ScoreboardItemComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.raceScoreService.getScoreForRace(this.race.id)
-            .subscribe(function (data) { return _this.score = data; });
+            .subscribe(function (data) {
+            _this.checkForNotification(data);
+            _this.score = data;
+        });
     };
     ScoreboardItemComponent.prototype.checkForNotification = function (newScore) {
         if (newScore.currentLap >= newScore.totalLaps) {
-            this.notification.emit("The " + this.race.name + " race has finished and " + newScore.race);
-            if (this.score && newScore.racers[0] != this.score.racers[0]) {
-                this.notification.emit(newScore.racers[0] + " has taken the lead in the " + this.race);
-            }
+            this.notification.emit("The " + this.race.name + " race has finished and " + newScore.racers[0] + " is the winner!");
+        }
+        if (this.score && newScore.racers[0] != this.score.racers[0]) {
+            this.notification.emit(newScore.racers[0] + " has taken the lead in the " + this.race.name + " race!");
         }
     };
     __decorate([
@@ -35,7 +38,7 @@ var ScoreboardItemComponent = (function () {
     ], ScoreboardItemComponent.prototype, "race", void 0);
     __decorate([
         core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
+        __metadata('design:type', Object)
     ], ScoreboardItemComponent.prototype, "notification", void 0);
     ScoreboardItemComponent = __decorate([
         core_1.Component({
